@@ -26,6 +26,15 @@
                 return num3;
         
         }
+        public static double TemperatureConverter(double celsius)
+        {
+            double fahrenheit;
+            double result3;
+
+            fahrenheit= (celsius * 9 / 5) + 32;
+            return fahrenheit;
+        }
+        
         public static void printValue(int input)
         {
             Console.WriteLine("the result of this operation is: " + input);
@@ -57,10 +66,36 @@
 
                     int result2 = LargestOfThreeNumbers( num1, num2, num3);
                     Console.WriteLine(result2);
+                    break;
+
+                case 3:
+                    Console.Write("Enter temperature in Celsius: ");
+                    double celsius = double.Parse(Console.ReadLine());
+
+                    double result3 = TemperatureConverter(celsius);
+                    Console.WriteLine(result3);
+                    break;
+
+                case 4:
+                   
+                    break;
+
+                case 5:
 
                     break;
-                case 3:
+                case 6:
+
                     break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+
                 default:
                     break;
             }
