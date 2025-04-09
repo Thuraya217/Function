@@ -52,6 +52,35 @@ namespace Function
                 return price;
       
         }
+
+        public static char GradingSystem(int mark)
+        {
+
+            char grade;
+
+            if (mark >= 90)
+                grade = 'A';
+            else if (mark >= 80)
+                grade = 'B';
+            else if (mark >= 70)
+                grade = 'C';
+            else if (mark >= 60)
+                grade = 'D';
+            else
+                grade = 'F';
+            return grade;
+        }
+
+        //public static int SwapTwoNumbers(int a, int b, int c)
+        //{
+           
+        //    c = a;
+        //    a = b;
+        //    b = c;
+
+        //}
+
+
         public static void printValue(string input)
         {
             Console.WriteLine("the result of this operation is: " + input);
@@ -102,11 +131,21 @@ namespace Function
                     break;
 
                 case 5:
-                 
+                    Console.Write("Enter student score: ");
+                    int mark = int.Parse(Console.ReadLine());
 
+                    char result5 = GradingSystem(mark);
+                    printValue(result5.ToString());
                     break;
                 case 6:
+                    //Console.Write("Enter first number: ");
+                    //int a = int.Parse(Console.ReadLine());
 
+                    //Console.Write("Enter second number: ");
+                    //int b = int.Parse(Console.ReadLine());
+
+                    //int result6 = SwapTwoNumbers(int a, int b, int c);
+                    //printValue(result6.ToString());
                     break;
                 case 7:
 
