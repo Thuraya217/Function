@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
 
 namespace Function
 {
@@ -71,14 +73,16 @@ namespace Function
             return grade;
         }
 
-        //public static int SwapTwoNumbers(int a, int b, int c)
-        //{
-           
-        //    c = a;
-        //    a = b;
-        //    b = c;
+        public static string SwapTwoNumbers(double a, double b)
+        {
+            double swap;
 
-        //}
+            swap = a;
+            a = b;
+            b = swap;
+            string Output = "First Number is = " + a + ", Second Number is = " + b;
+            return Output; 
+        }
 
 
         public static void printValue(string input)
@@ -138,14 +142,14 @@ namespace Function
                     printValue(result5.ToString());
                     break;
                 case 6:
-                    //Console.Write("Enter first number: ");
-                    //int a = int.Parse(Console.ReadLine());
+                    Console.Write("Enter first number: ");
+                    double a = int.Parse(Console.ReadLine());
 
-                    //Console.Write("Enter second number: ");
-                    //int b = int.Parse(Console.ReadLine());
+                    Console.Write("Enter second number: ");
+                    double b = int.Parse(Console.ReadLine());
 
-                    //int result6 = SwapTwoNumbers(int a, int b, int c);
-                    //printValue(result6.ToString());
+                    double result6 = SwapTwoNumbers( a, b);
+                    printValue(result6);
                     break;
                 case 7:
 
