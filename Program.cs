@@ -1,4 +1,6 @@
-﻿namespace Function
+﻿using System.Diagnostics;
+
+namespace Function
 {
     internal class Program
     {
@@ -34,8 +36,23 @@
             fahrenheit= (celsius * 9 / 5) + 32;
             return fahrenheit;
         }
-        
-        public static void printValue(int input)
+        public static double SimpleDiscountCalculator(double price)
+        {
+            double discount = 0;
+            double finalPrice;
+
+            if (price > 100)
+            {
+                discount = (price / 100) * 10;
+                finalPrice = price - discount;
+                return finalPrice;
+            }
+
+            else
+                return price;
+      
+        }
+        public static void printValue(string input)
         {
             Console.WriteLine("the result of this operation is: " + input);
         }
@@ -51,7 +68,7 @@
                     Console.WriteLine("Enter 2 numbers");
                     int number = int.Parse(Console.ReadLine());
                     string result = EvenOrOdd(number);
-                    Console.WriteLine(result);
+                    printValue(result);
                     break;
 
                 case 2:
@@ -65,7 +82,7 @@
                     int num3 = int.Parse(Console.ReadLine());
 
                     int result2 = LargestOfThreeNumbers( num1, num2, num3);
-                    Console.WriteLine(result2);
+                    printValue(result2.ToString()); ;
                     break;
 
                 case 3:
@@ -73,14 +90,19 @@
                     double celsius = double.Parse(Console.ReadLine());
 
                     double result3 = TemperatureConverter(celsius);
-                    Console.WriteLine(result3);
+                    printValue(result3.ToString()); 
                     break;
 
                 case 4:
-                   
+                    Console.Write("Enter the price of the item: ");
+                    double price = double.Parse(Console.ReadLine());
+
+                    double result4 = SimpleDiscountCalculator(price);
+                    printValue(result4.ToString());
                     break;
 
                 case 5:
+                 
 
                     break;
                 case 6:
