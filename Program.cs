@@ -94,6 +94,33 @@ namespace Function
             return Output;
         }
 
+        public static String ElectricityBillCalculator(int NumberUnitsConsume)
+        {
+            string massage;
+            double ElectricityBill;
+
+            if (NumberUnitsConsume <= 100)
+            {
+                ElectricityBill = NumberUnitsConsume * 0.5;
+                massage = "The Electricity Bill is: " + ElectricityBill;
+
+            }
+
+            else if (NumberUnitsConsume >= 101 && NumberUnitsConsume <= 300)
+            {
+                ElectricityBill = NumberUnitsConsume * 0.75;
+                massage = "The Electricity Bill is: " + ElectricityBill;
+            }
+
+            else
+            {
+                ElectricityBill = NumberUnitsConsume * 1;
+                massage = "The Electricity Bill is: " + ElectricityBill;
+
+            }
+            return massage;
+        }
+
         public static String SimpleCalculator(double FirstNumber, double SecondNumber, char operation)
         {
            
@@ -199,7 +226,12 @@ namespace Function
                     break;
                 case 8:
 
+                   
+                    Console.WriteLine("Enter the number of units consume :\n");
+                    int NumberUnitsConsume = int.Parse(Console.ReadLine());
 
+                    string result8 = ElectricityBillCalculator(NumberUnitsConsume);
+                    printValue(result8);
 
                     break;
                 case 9:
