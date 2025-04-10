@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 
@@ -93,6 +94,33 @@ namespace Function
             return Output;
         }
 
+        public static String SimpleCalculator(double FirstNumber, double SecondNumber, char operation)
+        {
+           
+            double result = 0;
+
+            if (operation == '+')
+                result = FirstNumber + SecondNumber;
+            else if (operation == '-')
+                result = FirstNumber - SecondNumber;
+            else if (operation == '*')
+                result = FirstNumber * SecondNumber;
+            else if (operation == '/')
+            {
+                if (SecondNumber != 0)
+                    result = FirstNumber / SecondNumber;
+                else
+                {
+                    return "Cannot divide by zero!";
+                }
+            }
+            else 
+                return "Invalid operator";
+
+            string Output = "Result: " + result;
+            return Output;
+        }
+
 
         public static void printValue(string input)
         {
@@ -176,7 +204,18 @@ namespace Function
                     break;
                 case 9:
 
-                   
+                    Console.Write("Enter first number: ");
+                    double FirstNumber = double.Parse(Console.ReadLine());
+
+                    Console.Write("Enter operator (+, -, *, /): ");
+                    char operation = Console.ReadKey().KeyChar;
+
+                    Console.Write("Enter second number: ");
+                    double SecondNumber = double.Parse(Console.ReadLine());
+
+                    string result9 = SimpleCalculator(FirstNumber, SecondNumber, operation);
+                    printValue(result9);
+
                     break;
 
                 default:
