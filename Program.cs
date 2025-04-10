@@ -73,15 +73,24 @@ namespace Function
             return grade;
         }
 
-        public static string SwapTwoNumbers(double a, double b)
+        public static String SwapTwoNumbers(int num1, int num2)
         {
-            double swap;
+            int swap;
 
-            swap = a;
-            a = b;
-            b = swap;
-            string Output = "First Number is = " + a + ", Second Number is = " + b;
+            swap = num1;
+            num1 = num2;
+            num2 = swap;
+            string Output = "First Number is = " + num1 + ", Second Number is = " + num2;
             return Output; 
+        }
+
+        public static String DaysToWeeksAndDaysConverter(int days)
+        {
+            int weeks = days / 7;
+            int remainingDays = days % 7;
+
+            string Output = days + " days = " + weeks + " week(s) and " + remainingDays + " day(s)";
+            return Output;
         }
 
 
@@ -142,23 +151,32 @@ namespace Function
                     printValue(result5.ToString());
                     break;
                 case 6:
+                  
                     Console.Write("Enter first number: ");
-                    double a = int.Parse(Console.ReadLine());
+                    num1 = int.Parse(Console.ReadLine());
 
                     Console.Write("Enter second number: ");
-                    double b = int.Parse(Console.ReadLine());
+                    num2 = int.Parse(Console.ReadLine());
 
-                    double result6 = SwapTwoNumbers( a, b);
+                    string result6 = SwapTwoNumbers( num1, num2);
                     printValue(result6);
                     break;
                 case 7:
 
+                    Console.Write("Enter number of days: ");
+                    int days = int.Parse(Console.ReadLine());
+
+                    string result7 = DaysToWeeksAndDaysConverter(days);
+                    printValue(result7);
                     break;
                 case 8:
+
+
 
                     break;
                 case 9:
 
+                   
                     break;
 
                 default:
